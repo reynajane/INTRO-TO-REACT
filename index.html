@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction to React</title>
+</head>
+<body>
+  
+  <h1>REACT BASICS</h1>
+  <ul>
+    <li>A JavaScript Library</li>
+    <li>Single Page Applications</li>
+    <li>Creating Reusable UI Components</li>
+  </ul>
+
+
+  <hr>
+  <h2>WHAT IS JSX</h2>
+  <p>Stands for JS XML</p>
+  <hr>
+
+  <h2>WHAT IS THE REACTDOM</h2>
+  <p>ReactDOM is a package that provides DOM Specific methods.</p>
+  <p>API containing methods</p>
+  <ul>
+    <li>render()</li>
+    <li>findDOMNode()</li>
+    <li>unmountComponentsNode()</li>
+    <li>hydrate()</li>
+    <li>createPortal()</li>
+
+  </ul>
+
+  <h2>Before learning React we should learn ES6</h2>
+  <li>Arrow Functions</li>
+  <li>Classes</li>
+  <li>Variables (let, const, var)</li>
+  <li>Array methods (.map())</li>
+  <li>Destructuring</li>
+  <li>Modules</li>
+  <li>Ternary operator</li>
+  <li>Spread operator</li>
+
+
+  <hr>
+  <h2>ARROW FUNCTION</h2>
+  <p>This is a regular function that display text of my favorite hero.</p>
+  <p id="hero"></p>
+  <p>This is an arrow function that display text of my second favorite hero.</p>
+  <p id="hero2"></p>
+
+
+  <p id="hero3">
+
+<!-- ********************* REACT CODE *****************-->
+
+<div id="testDive">HELLO WORLD</div>
+
+<header id="firstColumn"></header>
+
+<div id="firstJSX"></div>
+
+
+<p id="demo">PLACEHOLDER TEXT</p>
+<script type="module">
+
+  // make sure your running this on a server environment.
+  import {name, age} from './main.js';
+  document.getElementById('demo').innerHTML = 'My Name is ' + name + ' ';
+  document.getElementById('demo').innerHTML += 'I am ' + age + ' years old.';
+
+</script> 
+
+<script type="text/babel">
+  /*function Hi(){
+    return <h1>This is my simple React exercise 2!!!</h1>
+  }
+
+  //ReactDOM.render(<h1>Helloe React</h1>, document.getElementById('testDiv'));
+  ReactDOM.render(<Hi />, document.getElementById('testDiv'));*/
+
+  /*EXAMPLE 2*/
+  const name = "Rod Lopez";
+  ReactDOM.render(<h1>Hello {name}</h1>, document.getElementById('testDiv'));
+
+  /*CLASSES*/
+  /*Example 1
+  class Person{
+    constructor(name){
+      this.nickname = name;
+
+    }
+
+  }
+
+  const person = new Person('Cid');
+  document.write(person.nickname);
+  */
+
+  /*EXAMPLE 2 with inheritance
+  class Person{
+    constructor(skin){
+      this.skinColor = skin;
+
+    }
+    color() {
+      return 'I am a Filipino, I am proud of my beauty ' + this.skinColor;
+    }
+
+  }
+
+  class Medium extends Person {
+    constructor(skin, med){
+      super(skin);
+      this.bodyBuilt = med;
+    }
+
+    showText() {
+      return this.color() + ', body built of ' + this.bodyBuilt;
+    }
+  }
+
+  const person = new Medium('Brown', 'Medium');
+  document.write(person.showText());
+  */
+
+  /* REGULAR FUNCTION DECLARATION */
+  var favoriteHero = function(){
+    return 'Spiderman';
+  }
+
+  /* ARROW FNCTION DECLARATION */
+  var favoriteHero2 = () => {
+    return 'Roronoa Zorro';
+  }
+
+  var favoriteHero3 = () => "Kensin Himura"; // this will only work if we have one single statement.
+
+  document.getElementById('hero').innerHTML = favoriteHero();
+  document.getElementById('hero2').innerHTML = favoriteHero2();
+  document.getElementById('hero3').innerHTML = favoriteHero3();
+
+  /* EXAMPLE - Array Methods .map()
+  const fruitArray = ['mango', 'banana', 'orange'];
+
+  ReactDOM.render(fruits, document.getElementById('testDiv'));*/
+
+  /*DESTRUCTING ARRAYS*/ 
+
+  //Old way for assigning array to a variable
+  /*const hero = ['one piece', 'marvel', 'dc'];
+  const zorro = hero[0];
+  const spiderman = hero[1];
+  const batman = her0[2];
+*/
+
+// New approach DESCTRUCTING
+
+/*
+const hero = ['one piece', 'marvel', 'dc'];
+const [zorro, spiderman] = hero;
+document.write(zorro, spiderman);
+*/
+
+function calc(a,b){
+  const add = a + b;
+  const subtract = a - b;
+  const multiply = a * b;
+  const divide = a / b;
+
+  const myArray = [add, subtract, multiply, divide];
+  return
+
+
+}
+
+/*
+const add = myArray[0];
+const subtract = myArray[1];
+const multiply = myArray[2];
+const divide = myArray[3];
+*/
+
+  ///const [add,. subtract, multiply, divide ] = calc(4,5);
+/*
+
+  document.write('<p>Sum: ' + add + '</p>' );
+  document.write('<p>Sum: ' + subtract + '</p>' );
+  document.write('<p>Sum: ' + multiply + '</p>' );
+  document.write('<p>Sum: ' + divide + '</p>' );
+*/
+
+  /*SPREAD OPERATOR*/ 
+  /*
+  const n1 = ['One', 2, 'Three'];
+  const n2 = [4, 'five', 6];
+  const nCombined = [...n1, ...n2];
+
+  document.write(nCombined);
+  */
+
+  /*
+    const numberList = [10,20, 30,40, 50, 60];
+
+    const [ten, twenty, ...rest] = numberList;
+
+    document.write('<p>' + ten + '</p>');
+    document.write('<p>' + twenty + '</p>');
+    document.write('<p>' + rest + '</p>');
+  */
+
+  /*
+ const dog = {
+ color: 'brown',
+ size: 'medium',
+ attitude: 'brave'
+}
+
+ const cat = {
+ sound: 'meow',
+ breed: 'pusakal'
+ name: 'miming'
+}
+
+const dogCat = {...dog, ...cat};
+
+console.log(dogCat);
+
+const table = (
+  <table>
+    <tr><th>Reyna</th></tr>
+    <tr><td>Jane</th></tr>
+    <tr><th>Cabuga</th></tr>
+  </table>
+);
+
+ReactDOM.render(table, document.getElementById('firstColumn'));
+
+
+
+
+// const fragment = (
+//   <>
+//     <p>Fragment Child paragraph 1</p>
+//     <p>Fragment Child paragraph 2</p>
+//   </>
+// )
+
+
+
+
+
+
+
+
+
+//root.render(parent);
+//root.render(fragment);
+//root.render(forwardSlash);
+root.render(className);
+
+// ReactDOM.render()
+  function tick(){
+  const timer = (<h1>{new Date().toLocaleTimeString()}</h1>);
+    ReactDOM.render(timer, document.getElementById('testDiv'));
+  }
+  
+  setInterval(tick, 5000);
+
+  /*REACT COMPONENTS*/
+    function Welcome(){
+      return <h1>REACT FUNCTION COMPONENT</h1>;
+    }
+
+    ReactDOM.render(Welcome />, document.getElementById('testDiv'));
+
+
+  </script>
+
+</body>
+</html>
